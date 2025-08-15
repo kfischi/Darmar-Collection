@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darmar Collection - Premium Footwear & Luxury Living</title>
+    <meta name="description" content="DARMAR COLLECTION - Dressing You & Your Space in Luxury. Premium footwear, designer sandals, sneakers, and luxury slippers. WhatsApp orders available.">
+    <meta name="keywords" content="footwear, luxury shoes, designer sandals, sneakers, slippers, Kenya, premium collection">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header - Fully Responsive */
+        .header {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #DAA520;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: bold;
+            color: #DAA520;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            color: #cccccc;
+            white-space: nowrap;
+        }
+
+        /* Hero Section - Fully Responsive */
+        .hero {
+            position: relative;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/Darmar.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: clamp(30px, 8vw, 60px) 20px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 20px;
+            color: #DAA520;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            font-weight: bold;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            margin-bottom: 30px;
+            color: #f0f0f0;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Main WhatsApp CTA - Responsive */
+        .main-cta {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .main-whatsapp-btn {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: clamp(15px, 3vw, 20px) clamp(30px, 6vw, 50px);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .main-whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Products Section - Fully Responsive */
+        .products {
+            padding: clamp(40px, 8vw, 80px) 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            width: 100%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: clamp(30px, 6vw, 60px);
+            color: #DAA520;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(80px, 15vw, 120px);
+            height: 4px;
+            background: linear-gradient(45deg, #DAA520, #B8860B);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(20px, 4vw, 30px);
+            margin-top: clamp(30px, 6vw, 60px);
+            width: 100%;
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border-radius: 20px;
+            padding: clamp(20px, 4vw, 25px);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(218, 165, 32, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(218, 165, 32, 0.5);
+            box-shadow: 0 20px 40px rgba(218, 165, 32, 0.15);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #DAA520, #B8860B);
+        }
+
+        .product-image {
+            width: 100%;
+            height: clamp(150px, 25vw, 200px);
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background-color: #f8f9fa;
+        }
+
+        .product-title {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            margin-bottom: 10px;
+            color: #DAA520;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .product-price {
+            color: #ff6b6b;
+            font-weight: bold;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+        }
+
+        .product-size {
+            color: #74b9ff;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .product-description {
+            color: #cccccc;
+            margin-bottom: 20px;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            line-height: 1.4;
+        }
+
+        .product-whatsapp-btn {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: clamp(10px, 2.5vw, 12px) clamp(20px, 4vw, 25px);
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .product-whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(45deg, #20c05a, #0f7a6b);
+        }
+
+        /* Floating WhatsApp Button - Responsive */
+        .whatsapp-float {
+            position: fixed;
+            bottom: clamp(20px, 4vw, 30px);
+            right: clamp(20px, 4vw, 30px);
+            background: #25D366;
+            color: white;
+            width: clamp(50px, 10vw, 60px);
+            height: clamp(50px, 10vw, 60px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Footer - Responsive */
+        .footer {
+            background: #000;
+            padding: clamp(30px, 6vw, 40px) 0;
+            text-align: center;
+            border-top: 2px solid #DAA520;
+            margin-top: 60px;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: clamp(20px, 4vw, 30px);
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            color: #DAA520;
+            margin-bottom: 15px;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+        }
+
+        .footer-section p {
+            color: #cccccc;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            line-height: 1.5;
+        }
+
+        /* Mobile-Specific Adjustments */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-info {
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero {
+                min-height: 50vh;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .product-details {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .product-card {
+                padding: 15px;
+            }
+
+            .hero-content {
+                padding: 20px 15px;
+            }
+        }
+
+        /* Large screens optimization */
+        @media (min-width: 1200px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Ultra-wide screens */
+        @media (min-width: 1600px) {
+            .product-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">DARMAR COLLECTION</div>
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +254 743 280 228</span>
+                    <span><i class="fas fa-envelope"></i> mamadarren92@gmail.com</span>
+                    <span><i class="fab fa-instagram"></i> @darmar_collectionsewhere</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Brand Image -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>DARMAR COLLECTION</h1>
+            <p class="subtitle">Dressing You & Your Space in Luxury</p>
+            <div class="main-cta">
+                <a href="https://wa.me/254743280228?text=Hello! I'm interested in DARMAR COLLECTION's premium footwear and luxury items. Please show me your latest collection! 👟✨🏠" class="main-whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    Shop Now via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Our Premium Collection</h2>
+            <div class="product-grid">
+                
+                <!-- Product 1: LV Designer Sandals -->
+                <div class="product-card">
+                    <img src="images/lv-designer-sandals.jpg" alt="LV Designer Sandals" class="product-image" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ELV Designer Sandals%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">LV Designer Sandals</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 1,000</span>
+                        <span class="product-size">Brown/White</span>
+                    </div>
+                    <p class="product-description">Premium leather sandals with designer patterns. Available in brown and white colorways with gold accents.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the LV Designer Sandals (KSh 1,000) in brown/white. Please send me more details and availability! ✨" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 2: All Black Sneakers -->
+                <div class="product-card">
+                    <img src="images/black-classic-sneakers.jpg" alt="All Black Sneakers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EAll Black Sneakers%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">All Black Sneakers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 900</span>
+                        <span class="product-size">Classic Black</span>
+                    </div>
+                    <p class="product-description">Versatile black canvas sneakers perfect for casual and semi-formal occasions. Comfortable and durable.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the All Black Sneakers (KSh 900). Please send me more details! 👟" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 3: Nike Style -->
+                <div class="product-card">
+                    <img src="images/nike-sport-sneakers.jpg" alt="Nike Sport Sneakers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ENike Sport Sneakers%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Nike Style Sport Sneakers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 1,500</span>
+                        <span class="product-size">Pink/Blue/Black</span>
+                    </div>
+                    <p class="product-description">High-quality athletic sneakers in pink, blue, and black. Perfect for sports and street style.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Nike Style Sport Sneakers (KSh 1,500). Which colors are currently available? 💖" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 4: Leather Converse -->
+                <div class="product-card">
+                    <img src="images/leather-converse-sneakers.jpg" alt="Leather Converse Sneakers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ELeather Converse%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Leather Converse Sneakers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 1,100</span>
+                        <span class="product-size">Premium Leather</span>
+                    </div>
+                    <p class="product-description">Premium leather sneakers with classic design. Available in brown, gray, and black colorways.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Leather Converse Sneakers (KSh 1,100). Do you have my size available? 👞" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 5: Platform Colorful -->
+                <div class="product-card">
+                    <img src="images/colorful-platform-sandals.jpg" alt="Colorful Platform Sandals" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EColorful Platform%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Colorful Platform Sandals</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 700</span>
+                        <span class="product-size">Multiple Colors</span>
+                    </div>
+                    <p class="product-description">Trendy platform sandals with vibrant color straps. Perfect for summer and beach outings.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Colorful Platform Sandals (KSh 700). What colors do you have available? 🌈" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 6: H-Style Slippers -->
+                <div class="product-card">
+                    <img src="images/designer-h-style-slippers.jpg" alt="H-Style Slippers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EH-Style Slippers%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">H-Style Slippers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 350</span>
+                        <span class="product-size">Designer Style</span>
+                    </div>
+                    <p class="product-description">Elegant slippers inspired by luxury fashion. Available in pink, blue, white, black, and brown.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the H-Style Slippers (KSh 350). Please show me all available colors! 🎨" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 7: Birkenstock Style -->
+                <div class="product-card">
+                    <img src="images/comfort-buckle-sandals.jpg" alt="Birkenstock Style Sandals" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EBirkenstock Style%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Birkenstock Style Sandals</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 600</span>
+                        <span class="product-size">Comfort Fit</span>
+                    </div>
+                    <p class="product-description">Orthopedic comfort sandals with adjustable buckles. Available in white, gray, and orange.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Birkenstock Style Sandals (KSh 600). Are these good for walking? 🚶‍♀️" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 8: Kids Sandals -->
+                <div class="product-card">
+                    <img src="images/kids-buckle-sandals.jpg" alt="Kids Sandals" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EKids Sandals%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Kids Sandals</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 500</span>
+                        <span class="product-size">Size 30-36</span>
+                    </div>
+                    <p class="product-description">Adorable children's sandals with secure buckles. Perfect for growing feet in multiple colors.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Kids Sandals (KSh 500, Size 30-36). What colors do you have for children? 👶" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 9: Sport Sandals Orange/White -->
+                <div class="product-card">
+                    <img src="images/colorful-sport-sandals.jpg" alt="Sport Sandals Orange/White" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ESport Sandals%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Sport Sandals</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 600</span>
+                        <span class="product-size">Orange/White</span>
+                    </div>
+                    <p class="product-description">Athletic sport sandals with vibrant orange and white colorways. Perfect for outdoor activities.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Sport Sandals (KSh 600) in orange/white. Are these good for hiking? 🥾" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 10: Vans Style -->
+                <div class="product-card">
+                    <img src="images/vans-style-sneakers.jpg" alt="Vans Style Sneakers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EVans Style%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Vans Style Sneakers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 1,200</span>
+                        <span class="product-size">Skate Style</span>
+                    </div>
+                    <p class="product-description">Classic skate-style sneakers with comfortable fit. Perfect for street style and casual wear.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Vans Style Sneakers (KSh 1,200). What colors are available? 🛹" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 11: Men's Converse -->
+                <div class="product-card">
+                    <img src="images/classic-converse-sneakers.jpg" alt="Men's Converse Sneakers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EMen\'s Converse%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Men's Converse Sneakers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 1,000</span>
+                        <span class="product-size">Size 40-45</span>
+                    </div>
+                    <p class="product-description">Classic canvas sneakers for men in white, black, and burgundy. Timeless style and comfort.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Men's Converse Sneakers (KSh 1,000, Size 40-45). Do you have size 42 available? 👨" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 12: Glitter Slippers -->
+                <div class="product-card">
+                    <img src="images/sparkle-tweed-slippers.jpg" alt="Glitter Slippers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EGlitter Slippers%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Sparkle Tweed Slippers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 350</span>
+                        <span class="product-size">Glitter Finish</span>
+                    </div>
+                    <p class="product-description">Elegant slippers with glitter and tweed texture. Perfect for special occasions in black, silver, and gold.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Sparkle Tweed Slippers (KSh 350). These look so elegant! ✨" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 13: H-Cut Sandals -->
+                <div class="product-card">
+                    <img src="images/premium-h-cut-sandals.jpg" alt="H-Cut Sandals" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EH-Cut Sandals%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Premium H-Cut Sandals</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 600</span>
+                        <span class="product-size">Premium Cut</span>
+                    </div>
+                    <p class="product-description">Handcrafted leather sandals with classic H-cut design. Available in brown and green colorways.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Premium H-Cut Sandals (KSh 600). Is the leather genuine? 🌿" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 14: Furry Slippers -->
+                <div class="product-card">
+                    <img src="images/luxury-furry-slippers.jpg" alt="Luxury Furry Slippers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EFurry Slippers%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Luxury Furry Slippers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 800</span>
+                        <span class="product-size">Cozy Comfort</span>
+                    </div>
+                    <p class="product-description">Cozy furry slippers with animal print designs. Perfect for comfort and style at home or out.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Luxury Furry Slippers (KSh 800). They look so comfortable! 🐾" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 15: Quilted Slippers -->
+                <div class="product-card">
+                    <img src="images/quilted-luxury-slippers.jpg" alt="Quilted Luxury Slippers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EQuilted Slippers%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Quilted Luxury Slippers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 1,000</span>
+                        <span class="product-size">Quilted Design</span>
+                    </div>
+                    <p class="product-description">Premium quilted leather slippers in black, white, brown, and cream. Elegant and comfortable.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Quilted Luxury Slippers (KSh 1,000). The quilted design is beautiful! 💎" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 16: Gucci Pattern -->
+                <div class="product-card">
+                    <img src="images/designer-pattern-slippers.jpg" alt="Gucci Pattern Slippers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EGucci Pattern%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Designer Pattern Slippers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 350</span>
+                        <span class="product-size">Designer Pattern</span>
+                    </div>
+                    <p class="product-description">Luxury designer pattern slippers with gold hardware. Available in signature colors and patterns.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Designer Pattern Slippers (KSh 350). What patterns do you have? 🎨" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 17: Sport Sandals Black -->
+                <div class="product-card">
+                    <img src="images/athletic-sport-sandals.jpg" alt="Athletic Sport Sandals" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ESport Sandals Black%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Athletic Sport Sandals</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 800</span>
+                        <span class="product-size">Black</span>
+                    </div>
+                    <p class="product-description">Durable sport sandals in black perfect for outdoor activities and casual wear. Adjustable straps for perfect fit.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Athletic Sport Sandals (KSh 800) in black. Are these good for hiking? 🥾" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 18: FENDI Style -->
+                <div class="product-card">
+                    <img src="images/logo-band-slippers.jpg" alt="FENDI Style Slippers" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EFENDI Style%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">FENDI Style Logo Band Slippers</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 1,000</span>
+                        <span class="product-size">Logo Band</span>
+                    </div>
+                    <p class="product-description">Luxury brand-inspired slippers with woven design and logo bands. Multiple neutral colors available.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the FENDI Style Logo Band Slippers (KSh 1,000). These look very luxurious! 👑" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Product 19: Leather Sandals -->
+                <div class="product-card">
+                    <img src="images/premium-leather-sandals.jpg" alt="Premium Leather Sandals" class="product-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ELeather Sandals%3C/text%3E%3C/svg%3E'">
+                    <div class="product-title">Premium Leather Sandals</div>
+                    <div class="product-details">
+                        <span class="product-price">KSh 450</span>
+                        <span class="product-size">Genuine Leather</span>
+                    </div>
+                    <p class="product-description">Handcrafted genuine leather sandals with elegant design. Perfect for formal and casual occasions.</p>
+                    <a href="https://wa.me/254743280228?text=Hello! I'm interested in the Premium Leather Sandals (KSh 450). Is the leather genuine? 🌿" class="product-whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Order Now
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +254 743 280 228</p>
+                    <p><i class="fas fa-envelope"></i> mamadarren92@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p><i class="fab fa-instagram"></i> @darmar_collectionsewhere</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp Orders</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Sunday</p>
+                    <p>8:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <p style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #333;">
+                &copy; 2025 Darmar Collection. All rights reserved. | Dressing You & Your Space in Luxury
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254743280228?text=Hello! I'd like to browse DARMAR COLLECTION's complete catalog. Please help me find the perfect items! 👟✨🏠" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.98)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            }
+        });
+
+        // Product card animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initially hide and prepare for animation
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Performance optimization
+        window.addEventListener('load', function() {
+            // Lazy load images that are not visible
+            const images = document.querySelectorAll('.product-image');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        });
+    </script>
+</body>
+</html>
