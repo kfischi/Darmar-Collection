@@ -243,14 +243,16 @@
 
         .product-image {
             width: 100%;
-            height: clamp(150px, 25vw, 200px);
-            object-fit: cover;
+            height: clamp(180px, 30vw, 250px);
+            object-fit: contain;
+            object-position: center;
             border-radius: 15px;
             margin-bottom: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             background-color: #f8f9fa;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            padding: 10px;
         }
 
         .product-image-link {
