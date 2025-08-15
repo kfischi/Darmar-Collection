@@ -228,6 +228,45 @@
             margin-bottom: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             background-color: #f8f9fa;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-image-link {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product-image-link:hover .product-image {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(218, 165, 32, 0.3);
+        }
+
+        .product-image-link::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(218, 165, 32, 0.9);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .product-image-link:hover::after {
+            opacity: 1;
         }
 
         .product-title {
@@ -448,8 +487,10 @@
                 
                 <!-- Product 1: LV Designer Sandals -->
                 <div class="product-card">
-                    <img src="images/lv-designer-sandals.jpg" alt="LV Designer Sandals" class="product-image" 
-                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ELV Designer Sandals%3C/text%3E%3C/svg%3E'">
+                    <a href="https://did.li/Darmar-collection" target="_blank" rel="noopener noreferrer" class="product-image-link" title="View in our catalog">
+                        <img src="images/lv-designer-sandals.jpg" alt="LV Designer Sandals" class="product-image" 
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ELV Designer Sandals%3C/text%3E%3C/svg%3E'">
+                    </a>
                     <div class="product-title">LV Designer Sandals</div>
                     <div class="product-details">
                         <span class="product-price">KSh 1,000</span>
@@ -464,8 +505,10 @@
 
                 <!-- Product 2: All Black Sneakers -->
                 <div class="product-card">
-                    <img src="images/black-classic-sneakers.jpg" alt="All Black Sneakers" class="product-image"
-                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EAll Black Sneakers%3C/text%3E%3C/svg%3E'">
+                    <a href="https://did.li/Darmar-collection" target="_blank" rel="noopener noreferrer" class="product-image-link" title="View in our catalog">
+                        <img src="images/black-classic-sneakers.jpg" alt="All Black Sneakers" class="product-image"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EAll Black Sneakers%3C/text%3E%3C/svg%3E'">
+                    </a>
                     <div class="product-title">All Black Sneakers</div>
                     <div class="product-details">
                         <span class="product-price">KSh 900</span>
@@ -480,8 +523,10 @@
 
                 <!-- Product 3: Nike Style -->
                 <div class="product-card">
-                    <img src="images/nike-sport-sneakers.jpg" alt="Nike Sport Sneakers" class="product-image"
-                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ENike Sport Sneakers%3C/text%3E%3C/svg%3E'">
+                    <a href="https://did.li/Darmar-collection" target="_blank" rel="noopener noreferrer" class="product-image-link" title="View in our catalog">
+                        <img src="images/nike-sport-sneakers.jpg" alt="Nike Sport Sneakers" class="product-image"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ENike Sport Sneakers%3C/text%3E%3C/svg%3E'">
+                    </a>
                     <div class="product-title">Nike Style Sport Sneakers</div>
                     <div class="product-details">
                         <span class="product-price">KSh 1,500</span>
@@ -496,8 +541,10 @@
 
                 <!-- Product 4: Leather Converse -->
                 <div class="product-card">
-                    <img src="images/leather-converse-sneakers.jpg" alt="Leather Converse Sneakers" class="product-image"
-                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ELeather Converse%3C/text%3E%3C/svg%3E'">
+                    <a href="https://did.li/Darmar-collection" target="_blank" rel="noopener noreferrer" class="product-image-link" title="View in our catalog">
+                        <img src="images/leather-converse-sneakers.jpg" alt="Leather Converse Sneakers" class="product-image"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3ELeather Converse%3C/text%3E%3C/svg%3E'">
+                    </a>
                     <div class="product-title">Leather Converse Sneakers</div>
                     <div class="product-details">
                         <span class="product-price">KSh 1,100</span>
@@ -512,8 +559,10 @@
 
                 <!-- Product 5: Platform Colorful -->
                 <div class="product-card">
-                    <img src="images/colorful-platform-sandals.jpg" alt="Colorful Platform Sandals" class="product-image"
-                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EColorful Platform%3C/text%3E%3C/svg%3E'">
+                    <a href="https://did.li/Darmar-collection" target="_blank" rel="noopener noreferrer" class="product-image-link" title="View in our catalog">
+                        <img src="images/colorful-platform-sandals.jpg" alt="Colorful Platform Sandals" class="product-image"
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect width=\'300\' height=\'200\' fill=\'%23f8f9fa\'/%3E%3Ctext x=\'150\' y=\'100\' font-family=\'Arial\' font-size=\'16\' fill=\'%23666\' text-anchor=\'middle\'%3EColorful Platform%3C/text%3E%3C/svg%3E'">
+                    </a>
                     <div class="product-title">Colorful Platform Sandals</div>
                     <div class="product-details">
                         <span class="product-price">KSh 700</span>
